@@ -1,77 +1,89 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NEFEDOFF TH</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <style>
     body {
-      background-color: #111;
-      color: #eee;
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: radial-gradient(circle at center, #111 0%, #000 100%);
+      color: #eee;
       text-align: center;
+      overflow-x: hidden;
     }
-    .logo {
-      margin-top: 50px;
-      animation: fadein 2s ease-in-out;
+    .container {
+      padding: 40px 20px;
+      animation: fadeIn 1.5s ease;
     }
-    .links a {
-      display: block;
-      margin: 10px;
-      color: #00ffff;
+    img.logo {
+      width: 280px;
+      margin-top: 40px;
+      filter: drop-shadow(0 0 10px #0ff);
+      animation: spin 3s linear infinite;
+    }
+    h1 {
+      margin: 20px 0 10px;
+      font-size: 2.2em;
+      color: #0ff;
+      text-shadow: 0 0 10px #0ff;
+    }
+    p {
+      font-size: 1.1em;
+      margin-bottom: 30px;
+    }
+    a.button {
+      display: inline-block;
+      margin: 8px;
+      padding: 12px 25px;
+      background: #0ff;
+      color: #000;
       text-decoration: none;
-      font-size: 1.2em;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #0ff;
+      transition: 0.3s ease;
     }
-    @keyframes fadein {
-      from { opacity: 0; transform: translateY(-20px); }
+    a.button:hover {
+      background: #fff;
+      color: #000;
+      box-shadow: 0 0 20px #0ff;
+    }
+    .footer {
+      margin-top: 60px;
+      font-size: 0.9em;
+      color: #888;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    .lang {
-      margin-top: 30px;
+    @keyframes spin {
+      0% { transform: rotate(0deg);}
+      100% { transform: rotate(360deg);}
     }
   </style>
 </head>
 <body>
-  <img src="logo.jpg" alt="Logo" class="logo" width="300" />
-  <h1>NEFEDOFF TH</h1>
-  <p id="bio">Путешествия. Мото. Лодки. Жизнь на полную.</p>
-
-  <div class="links">
-    <a href="https://www.youtube.com/@NefedoffTH" target="_blank">YouTube</a>
-    <a href="https://vkvideo.ru/@nefedoff_vk" target="_blank">VK Видео</a>
-    <a href="https://dzen.ru/nefedoffth" target="_blank">Яндекс Дзен</a>
-    <a href="https://t.me/nefedofth" target="_blank">Telegram</a>
-    <a href="https://www.instagram.com/nefedoffth/" target="_blank">Instagram</a>
-    <a href="https://www.facebook.com/maxim.nefedov.1" target="_blank">Facebook</a>
+  <div class="container">
+    <img src="logo.jpg" class="logo" alt="Logo">
+    <h1>NEFEDOFF TH</h1>
+    <p>Путешествия. Мото. Лодки. Свобода. Ручной труд. Без шаблонов.</p>
+    <div>
+      <a href="https://www.youtube.com/@NefedoffTH" class="button" target="_blank">YouTube</a>
+      <a href="https://vkvideo.ru/@nefedoff_vk" class="button" target="_blank">VK Видео</a>
+      <a href="https://dzen.ru/nefedoffth" class="button" target="_blank">Дзен</a>
+      <a href="https://t.me/nefedofth" class="button" target="_blank">Telegram</a>
+      <a href="https://www.instagram.com/nefedoffth/" class="button" target="_blank">Instagram</a>
+      <a href="https://www.facebook.com/maxim.nefedov.1" class="button" target="_blank">Facebook</a>
+    </div>
+    <div style="margin-top: 40px;">
+      📬 По вопросам сотрудничества: <b>promo@nefedoffth.com</b>
+    </div>
+    <div class="footer">
+      © 2025 NEFEDOFF — Сделано вручную в Таиланде
+    </div>
   </div>
-
-  <div class="lang">
-    <label for="lang">🌍 Choose language:</label>
-    <select id="lang" onchange="translateText()">
-      <option value="ru">Русский</option>
-      <option value="en">English</option>
-      <option value="th">ไทย</option>
-      <option value="vi">Tiếng Việt</option>
-      <option value="by">Беларуская</option>
-      <option value="kz">Қазақша</option>
-    </select>
-  </div>
-
-  <script>
-    const texts = {
-      "ru": "Путешествия. Мото. Лодки. Жизнь на полную.",
-      "en": "Travel. Motorcycles. Boats. Living to the fullest.",
-      "th": "ท่องเที่ยว มอเตอร์ไซค์ เรือ ใช้ชีวิตให้สุด",
-      "vi": "Du lịch. Xe máy. Thuyền. Sống hết mình.",
-      "by": "Падарожжы. Мота. Лодкі. Жыццё напоўніцу.",
-      "kz": "Саяхат. Мотоцикл. Қайықтар. Толық өмір сүр.",
-    };
-    function translateText() {
-      const lang = document.getElementById("lang").value;
-      document.getElementById("bio").innerText = texts[lang];
-    }
-  </script>
 </body>
 </html>
