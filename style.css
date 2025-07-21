@@ -1,0 +1,100 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #111;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  overflow-x: hidden;
+}
+
+.container {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.neon-text {
+  font-size: 48px;
+  color: #ff00ff;
+  text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+}
+
+.subtitle {
+  font-size: 20px;
+  color: #ccc;
+  margin-top: -10px;
+}
+
+.buttons {
+  margin: 30px 0;
+}
+
+.btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  border: 2px solid #ff00ff;
+  border-radius: 10px;
+  color: #ff00ff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  background-color: transparent;
+}
+
+.btn:hover {
+  background-color: #ff00ff;
+  color: #111;
+  transform: scale(1.1);
+}
+
+.qr-code {
+  margin-top: 15px;
+  width: 180px;
+  border: 5px solid white;
+  border-radius: 10px;
+}
+
+.language-switch {
+  margin: 30px 0;
+}
+
+.language-switch select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  background-color: #222;
+  color: #ffcc99;
+  border: 2px solid #ffcc99;
+  font-weight: bold;
+}
+
+.trailer {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #aaa;
+}
+
+.bg-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.floating-logo {
+  position: absolute;
+  width: 150px;
+  opacity: 0.05;
+  animation: floatLogo 20s linear infinite;
+}
+
+@keyframes floatLogo {
+  0% { top: 0; left: 0; }
+  25% { top: 0; left: 90%; }
+  50% { top: 90%; left: 90%; }
+  75% { top: 90%; left: 0; }
+  100% { top: 0; left: 0; }
+}
